@@ -1,16 +1,10 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from etl.analise import AnaliseCompras
+from etl.parquet_converter.parquet_converter import json_to_parquet
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    # json_to_parquet("/home/leonardo/porjetos_python/analise_compras/json/vendas.json", "vendas")
+    analise = AnaliseCompras()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    analise.execute("/home/leonardo/porjetos_python/analise_compras/json/vendas.json")
